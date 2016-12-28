@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
-public class TestController {
+public class BlogEntryController {
 	@RequestMapping("/test")
 	public String test() {
 		return "view";

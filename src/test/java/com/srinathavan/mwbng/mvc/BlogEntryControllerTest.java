@@ -10,12 +10,14 @@
 package com.srinathavan.mwbng.mvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.srinathavan.mwbng.mvc.BlogEntryController;
@@ -42,7 +44,14 @@ public class BlogEntryControllerTest {
 
 	@Test
 	public void test() throws Exception {
+//		for get request
 		mockMvc.perform(get("/test")).andDo(print());
+//		for post request
+		mockMvc.perform(post("/test")
+				.content("{\"title\":\"sending or receiving title\"}")
+				.contentType(MediaType.APPLICATION_JSON)
+				)
+		.andDo(print());
 	}
 
 }

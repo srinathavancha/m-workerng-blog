@@ -12,7 +12,7 @@ package com.srinathavan.mwbng.service.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.srinathavan.mwbng.entities.BlogEntry;
+import com.srinathavan.mwbng.core.models.entities.BlogEntry;
 
 /**
  * @author Avancha

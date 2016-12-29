@@ -7,7 +7,7 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  */
-package com.srinathavan.mwbng.service;
+package com.srinathavan.mwbng.core.repositories;
 
 import com.srinathavan.mwbng.core.models.entities.BlogEntry;
 
@@ -15,7 +15,7 @@ import com.srinathavan.mwbng.core.models.entities.BlogEntry;
  * @author Avancha
  *
  */
-public interface BlogEntryService {
+public interface BlogEntryRepo {
 	/**
 	 * 
 	 * @param id

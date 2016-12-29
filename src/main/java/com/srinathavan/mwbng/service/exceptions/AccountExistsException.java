@@ -13,12 +13,12 @@ package com.srinathavan.mwbng.service.exceptions;
  * @author Avancha
  *
  */
-public class AccountDoesNotExistException extends RuntimeException {
+public class AccountExistsException extends RuntimeException {
 
 	/**
 	 * 
 	 */
-	public AccountDoesNotExistException() {
+	public AccountExistsException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,7 +29,7 @@ public class AccountDoesNotExistException extends RuntimeException {
 	 * @param enableSuppression
 	 * @param writableStackTrace
 	 */
-	public AccountDoesNotExistException(String message, Throwable cause, boolean enableSuppression,
+	public AccountExistsException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub
@@ -39,7 +39,7 @@ public class AccountDoesNotExistException extends RuntimeException {
 	 * @param message
 	 * @param cause
 	 */
-	public AccountDoesNotExistException(String message, Throwable cause) {
+	public AccountExistsException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
@@ -47,7 +47,7 @@ public class AccountDoesNotExistException extends RuntimeException {
 	/**
 	 * @param message
 	 */
-	public AccountDoesNotExistException(String message) {
+	public AccountExistsException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
@@ -55,9 +55,9 @@ public class AccountDoesNotExistException extends RuntimeException {
 	/**
 	 * @param cause
 	 */
-	public AccountDoesNotExistException(Throwable cause) {
+	public AccountExistsException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-
+	
 }

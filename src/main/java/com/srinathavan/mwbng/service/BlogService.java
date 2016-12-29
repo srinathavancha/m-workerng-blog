@@ -9,8 +9,8 @@
  */
 package com.srinathavan.mwbng.service;
 
-import com.srinathavan.mwbng.entities.Blog;
-import com.srinathavan.mwbng.entities.BlogEntry;
+import com.srinathavan.mwbng.core.models.entities.Blog;
+import com.srinathavan.mwbng.core.models.entities.BlogEntry;
 import com.srinathavan.mwbng.service.util.BlogEntryList;
 import com.srinathavan.mwbng.service.util.BlogList;
 

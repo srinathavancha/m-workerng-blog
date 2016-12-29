@@ -9,8 +9,8 @@
  */
 package com.srinathavan.mwbng.service;
 
-import com.srinathavan.mwbng.entities.Account;
-import com.srinathavan.mwbng.entities.Blog;
+import com.srinathavan.mwbng.core.models.entities.Account;
+import com.srinathavan.mwbng.core.models.entities.Blog;
 
 /**
  * @author Avancha

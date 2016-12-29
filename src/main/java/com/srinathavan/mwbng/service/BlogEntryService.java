@@ -9,7 +9,7 @@
  */
 package com.srinathavan.mwbng.service;
 
-import com.srinathavan.mwbng.entities.BlogEntry;
+import com.srinathavan.mwbng.core.models.entities.BlogEntry;
 
 /**
  * @author Avancha

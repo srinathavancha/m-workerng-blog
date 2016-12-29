@@ -11,9 +11,11 @@ package com.srinathavan.mwbng.core.models.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -21,16 +23,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 @Entity
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class Account {
 	@Id 
-	@GeneratedValue
-	private Long id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 	private String name;
 
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -38,7 +41,7 @@ public class Account {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,11 @@ public class AccountController {
 
 	private AccountService accountService;
 
+	@ModelAttribute("account")
+	public Account constructAccount(){
+		return new Account();
+	}
+	
 	/**
 	 * @param accountService
 	 */
@@ -46,7 +52,8 @@ public class AccountController {
 		super();
 		this.accountService = accountService;
 	}
-
+	
+	/*@RequestMapping(method = RequestMethod.POST, headers={"Accept=application/json", "Content-Type=application/json"})*/
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> createAccount(@RequestBody Account requestAccount) {
 		try {
@@ -55,7 +62,7 @@ public class AccountController {
 		} catch (AccountExistsException exception) {
 			throw new ConflictException(exception);
 		}
-	}
+	}	
 
 	/**
 	 * Method to account entry data by its id
@@ -73,7 +80,7 @@ public class AccountController {
 		}
 	}
 
-	@RequestMapping(value = "/{accountId}", method = RequestMethod.PUT)
+/*	@RequestMapping(value = "/{accountId}", method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateAccount(@PathVariable Long accountId, @RequestBody Account requestAccount) {
 		Account responseAccount = accountService.updateAccount(accountId, requestAccount);
 		if (null != responseAccount) {
@@ -81,9 +88,9 @@ public class AccountController {
 		} else {
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
-	}
+	}*/
 
-	@RequestMapping(value = "/{accountId}", method = RequestMethod.DELETE)
+/*	@RequestMapping(value = "/{accountId}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> deleteAccount(@PathVariable Long accountId) {
 		Account account = accountService.deleteAccount(accountId);
 		if (null != account) {
@@ -91,7 +98,7 @@ public class AccountController {
 		} else {
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
-	}
+	}*/
 
 	@RequestMapping(value = "/{accountId}/blogs", method = RequestMethod.POST)
 	public ResponseEntity<Object> createBlog(@PathVariable Long accoundId, @RequestBody Blog data) {

@@ -12,26 +12,36 @@ package com.srinathavan.mwbng.service.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.srinathavan.mwbng.core.models.entities.Blog;
+
 /**
  * @author Avancha
  *
  */
 public class BlogList {
 
-	private List<BlogList> blogs = new ArrayList<BlogList>();
+	private List<Blog> blogs = new ArrayList<Blog>();
+
+	/**
+	 * @param findBlogsByAccount
+	 */
+	public BlogList(List<Blog> blogList) {
+		blogs.addAll(blogList);
+	}
 
 	/**
 	 * @return the blogs
 	 */
-	public List<BlogList> getBlogs() {
+	public List<Blog> getBlogs() {
 		return blogs;
 	}
 
 	/**
 	 * @param blogs the blogs to set
 	 */
-	public void setBlogs(List<BlogList> blogs) {
+	public void setBlogs(List<Blog> blogs) {
 		this.blogs = blogs;
 	}
+
 
 }

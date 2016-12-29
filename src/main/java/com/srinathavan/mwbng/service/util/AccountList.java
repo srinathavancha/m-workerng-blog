@@ -12,27 +12,36 @@ package com.srinathavan.mwbng.service.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.srinathavan.mwbng.core.models.entities.Account;
+
 /**
  * @author Avancha
  *
  */
 public class AccountList {
 
-	private List<AccountList> accountList = new ArrayList<AccountList>();
+	private List<Account> accountList = new ArrayList<Account>();
+
+	/**
+	 * @param allAccounts
+	 */
+	public AccountList(List<Account> allAccounts) {
+		accountList.addAll(allAccounts);
+	}
 
 	/**
 	 * @return the accountList
 	 */
-	public List<AccountList> getAccountList() {
+	public List<Account> getAccountList() {
 		return accountList;
 	}
 
 	/**
 	 * @param accountList the accountList to set
 	 */
-	public void setAccountList(List<AccountList> accountList) {
+	public void setAccountList(List<Account> accountList) {
 		this.accountList = accountList;
 	}
-
+	
 
 }

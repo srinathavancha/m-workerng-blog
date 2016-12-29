@@ -9,6 +9,8 @@
  */
 package com.srinathavan.mwbng.core.repositories;
 
+import java.util.List;
+
 import com.srinathavan.mwbng.core.models.entities.Account;
 import com.srinathavan.mwbng.core.models.entities.Blog;
 
@@ -19,10 +21,21 @@ import com.srinathavan.mwbng.core.models.entities.Blog;
 public interface AccountRepo {
 	/**
 	 * 
+	 * @return
+	 */
+	public List<Account> findAllAccounts();
+	/**
+	 * 
 	 * @param id
 	 * @return
 	 */
 	public Account findAccount(Long id);
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Account findAccountByName(String name);
 
 	/**
 	 * 
@@ -45,14 +58,4 @@ public interface AccountRepo {
 	 * @return
 	 */
 	public Account deleteAccount(Long id);
-
-	/**
-	 * 
-	 * @param accountId
-	 * @param data
-	 * @return
-	 */
-	public Blog createBlog(Long accountId, Blog data);
-
-
 }

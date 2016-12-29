@@ -22,35 +22,31 @@ public class BlogEntryList {
 
 	private List<BlogEntry> entries = new ArrayList<BlogEntry>();
 	private Long blogId;
-
+	
 	/**
 	 * @return the entries
 	 */
 	public List<BlogEntry> getEntries() {
 		return entries;
 	}
-
 	/**
-	 * @param entries
-	 *            the entries to set
+	 * @param entries the entries to set
 	 */
 	public void setEntries(List<BlogEntry> entries) {
 		this.entries = entries;
 	}
-
 	/**
 	 * @return the blogId
 	 */
 	public Long getBlogId() {
 		return blogId;
 	}
-
 	/**
-	 * @param blogId
-	 *            the blogId to set
+	 * @param blogId the blogId to set
 	 */
 	public void setBlogId(Long blogId) {
 		this.blogId = blogId;
 	}
 
+	
 }

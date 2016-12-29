@@ -9,6 +9,8 @@
  */
 package com.srinathavan.mwbng.core.repositories;
 
+import java.util.List;
+
 import com.srinathavan.mwbng.core.models.entities.Blog;
 import com.srinathavan.mwbng.core.models.entities.BlogEntry;
 import com.srinathavan.mwbng.service.util.BlogEntryList;
@@ -64,5 +66,23 @@ public interface BlogRepo {
 	 * @throws com.srinathavan.mwbng.service.exceptions.BlogNotFoundException
 	 */
 	public BlogEntry createBlogEntry(Long blogId, BlogEntry data);
+
+	/**
+	 * @param title
+	 * @return
+	 */
+	public Blog findBlogByTitle(String title);
+
+	/**
+	 * @param data
+	 * @return
+	 */
+	public Blog createBlog(Blog data);
+
+	/**
+	 * @param accountId 
+	 * @return
+	 */
+	public List<Blog> findBlogsByAccount(Long accountId);
 
 }

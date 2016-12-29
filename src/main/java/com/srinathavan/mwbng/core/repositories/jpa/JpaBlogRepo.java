@@ -9,6 +9,12 @@
  */
 package com.srinathavan.mwbng.core.repositories.jpa;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.springframework.stereotype.Repository;
 
 import com.srinathavan.mwbng.core.models.entities.Blog;
@@ -23,6 +29,9 @@ import com.srinathavan.mwbng.service.util.BlogList;
  */
 @Repository
 public class JpaBlogRepo implements BlogRepo {
+	
+	@PersistenceContext
+	private EntityManager em;
 
 	/* (non-Javadoc)
 	 * @see com.srinathavan.mwbng.core.repositories.BlogRepo#findAllBlogs()
@@ -76,6 +85,34 @@ public class JpaBlogRepo implements BlogRepo {
 	public BlogEntry createBlogEntry(Long blogId, BlogEntry data) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.srinathavan.mwbng.core.repositories.BlogRepo#findBlogByTitle(java.lang.String)
+	 */
+	@Override
+	public Blog findBlogByTitle(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.srinathavan.mwbng.core.repositories.BlogRepo#createBlog(com.srinathavan.mwbng.core.models.entities.Blog)
+	 */
+	@Override
+	public Blog createBlog(Blog data) {
+		em.persist(data);
+		return data;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.srinathavan.mwbng.core.repositories.BlogRepo#findBlogsByAccount(java.lang.Long)
+	 */
+	@Override
+	public List<Blog> findBlogsByAccount(Long accountId) {
+		Query query = em.createQuery("Select b from Blog b where b.owner.id=?");
+		query.setParameter(0, accountId);
+		return query.getResultList();
 	}
 
 }

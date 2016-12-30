@@ -1,1 +1,1 @@
-Hello welcome
+<%response.sendRedirect(request.getContextPath()+"/staticResource");%>

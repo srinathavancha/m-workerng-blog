@@ -1,1 +1,6 @@
 /target/
+build
+vendor
+node
+node_modules
+bower_components

@@ -14,6 +14,13 @@
 		
 		<mvc:annotation-driven/>
 
+		<!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource requests to the container's default Servlet -->
+		<mvc:default-servlet-handler/>
+		
+		<!-- Resource exclusion from default servlet -->
+		<mvc:resources mapping="/app/**" location="/app/build/"></mvc:resources>
+		
+		
 		<bean id="jstlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 				<property name="prefix" value="/WEB-INF/jsp/"></property>
 				<property name="suffix" value=".jsp"></property>

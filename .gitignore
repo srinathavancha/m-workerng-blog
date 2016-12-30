@@ -1,6 +1,10 @@
 /target/
-build
-vendor
+
+*.sw*
+*~
+build/
+bin/
 node
-node_modules
-bower_components
+node_modules/
+bower_components/
+vendor/

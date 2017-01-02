@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class WebIndexController {
 
-	@RequestMapping(value = {"/", "/index", "/app"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/index", "/client"}, method = RequestMethod.GET)
 	public String index() {
 		/*return "view";*/
-		return "redirect:/app/index.html";
+		return "redirect:/client/index.html";
 	}
 	
 	/*@RequestMapping(value = {"/staticResource"}, method = RequestMethod.GET)

@@ -18,7 +18,7 @@
 		<mvc:default-servlet-handler/>
 		
 		<!-- Resource exclusion from default servlet -->
-		<mvc:resources mapping="/app/**" location="/app/build/"></mvc:resources>
+		<mvc:resources mapping="/client/**" location="/client/build/"></mvc:resources>
 		
 		
 		<bean id="jstlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

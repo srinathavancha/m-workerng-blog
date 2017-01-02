@@ -9,6 +9,9 @@
  */
 package com.srinathavan.mwbng.rest.mvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +31,8 @@ import com.srinathavan.mwbng.service.AccountService;
 import com.srinathavan.mwbng.service.exceptions.AccountDoesNotExistException;
 import com.srinathavan.mwbng.service.exceptions.AccountExistsException;
 import com.srinathavan.mwbng.service.exceptions.BlogExistsException;
+import com.srinathavan.mwbng.service.util.AccountList;
+import com.srinathavan.mwbng.service.util.BlogList;
 
 /**
  * @author Avancha
@@ -51,6 +56,16 @@ public class AccountController {
 	public AccountController(AccountService accountService) {
 		super();
 		this.accountService = accountService;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Object> findAllAccounts() {
+		AccountList accountList = accountService.findAllAccounts();
+		Map<String, Object> responseData = new HashMap<String, Object>();
+		responseData.put("data", accountList);
+		responseData.put("status", "success");
+		responseData.put("message", "Account list fetched successfully.");
+		return new ResponseEntity<Object>(responseData, HttpStatus.OK);
 	}
 	
 	/*@RequestMapping(method = RequestMethod.POST, headers={"Accept=application/json", "Content-Type=application/json"})*/

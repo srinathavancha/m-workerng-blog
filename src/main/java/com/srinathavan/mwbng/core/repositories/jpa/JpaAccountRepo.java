@@ -55,7 +55,7 @@ public class JpaAccountRepo implements AccountRepo {
 	 */
 	@Override
 	public Account findAccountByName(String name) {
-		Query query = em.createQuery("select a from Account a where a.name=?");
+		Query query = em.createQuery("select a from Account a where a.username=?");
 		query.setParameter(0, name);
 		List<Account> accounts = query.getResultList();
 		if(accounts.size() == 0) {

@@ -23,12 +23,38 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 @Entity
-@JsonIgnoreProperties(ignoreUnknown=true)
+/**
+ * @JsonIgnoreProperties \n 
+ * Annotation that can be used to either suppress
+ *                       serialization of properties (during serialization), or
+ *                       ignore processing of JSON properties read (during
+ *                       deserialization).
+ *
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
-	@Id 
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	/**
+	 * 
+	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String name;
+	/**
+	 * 
+	 */
+	private String username;
+	/**
+	 * 
+	 */
+	private String password;
+	/**
+	 * 
+	 */
+	private String firstName;
+	/**
+	 * 
+	 */
+	private String lastName;
 
 	/**
 	 * @return the id
@@ -46,18 +72,18 @@ public class Account {
 	}
 
 	/**
-	 * @return the name
+	 * @return the username
 	 */
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param username
+	 *            the username to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String name) {
+		this.username = name;
 	}
 
 	/**
@@ -80,5 +106,31 @@ public class Account {
 		this.password = password;
 	}
 
-	private String password;
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 }

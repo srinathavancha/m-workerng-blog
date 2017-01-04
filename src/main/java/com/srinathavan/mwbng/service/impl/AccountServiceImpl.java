@@ -67,7 +67,7 @@ public class AccountServiceImpl implements AccountService {
 	 */
 	@Override
 	public Account createAccount(Account data) {
-		Account account = accountRepo.findAccountByName(data.getName());
+		Account account = accountRepo.findAccountByName(data.getUsername());
 		if(null != account){
 			throw new AccountExistsException();
 		}

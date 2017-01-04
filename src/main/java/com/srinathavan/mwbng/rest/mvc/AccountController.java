@@ -70,7 +70,7 @@ public class AccountController {
 	
 	/*@RequestMapping(method = RequestMethod.POST, headers={"Accept=application/json", "Content-Type=application/json"})*/
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Object> createAccount(@RequestBody Account requestAccount) {
+	public @ResponseBody ResponseEntity<Object> createAccount(@RequestBody Account requestAccount) {
 		try {
 			Account responseAccount = accountService.createAccount(requestAccount);
 			return new ResponseEntity<Object>(responseAccount, HttpStatus.OK);
